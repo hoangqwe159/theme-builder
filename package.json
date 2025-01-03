@@ -5,7 +5,7 @@
   "packageManager": "pnpm@8.4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hoangqwe159/theme-builder"
+    "url": "git+https://github.com/hoangqwe159/theme-builder.git"
   },
   "main": "./dist/theme-builder.umd.js",
   "module": "./dist/theme-builder.es.js",
@@ -43,5 +43,12 @@
     "*.{ts,tsx,js,jsx,json,css,md}": [
       "prettier -w"
     ]
-  }
+  },
+  "description": "## Features",
+  "bugs": {
+    "url": "https://github.com/hoangqwe159/theme-builder/issues"
+  },
+  "homepage": "https://github.com/hoangqwe159/theme-builder#readme",
+  "author": "",
+  "license": "ISC"
 }
