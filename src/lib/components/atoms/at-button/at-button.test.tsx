@@ -6,6 +6,6 @@ describe('AtButton', () => {
   it('should render', async () => {
     const label = 'test button'
     render(<AtButton label={label} />)
-    expect(screen.getByText(label)).toBeDefined()
+    expect(screen.getByText(label).textContent).toBe(label)
   })
 })
