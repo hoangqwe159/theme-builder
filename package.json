@@ -1,5 +1,5 @@
 {
-  "name": "theme-builder",
+  "name": "@tashelix/theme-builder",
   "private": false,
   "version": "2.0.4",
   "packageManager": "pnpm@8.4.0",
