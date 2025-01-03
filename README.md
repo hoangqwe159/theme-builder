@@ -37,10 +37,6 @@ Always prepending pnpm:
 
 I created a post explaning how to set up this library and publish it to a package registry! You can read it [here](https://igna.hashnode.dev/vite-react-typescript-component-library-template-setup-explanation).
 
-## Author
-
-[Ignacio Miranda Figueroa](https://www.linkedin.com/in/ignacio-miranda-figueroa/)
-
 ## License
 
 [MIT](LICENSE)
