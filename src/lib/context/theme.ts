@@ -587,7 +587,7 @@ const SCHEMES = [
   TEAL_SCHEME,
 ]
 
-let index = 0
+let index = 1
 export const getNextScheme = (): {
   light: ColorVariants
   dark: ColorVariants
