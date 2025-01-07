@@ -1,23 +1,15 @@
-import {
-  Box,
-  Button,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  Paper,
-  Typography,
-  useColorScheme,
-} from '@mui/material'
-import { ThemeBuilderProps } from '../pages'
+import Box from '@mui/material/Box'
+import DialogContent from '@mui/material/DialogContent'
+import Paper from '@mui/material/Paper'
 import Footer from '../presentation/Footer'
 import Header from '../presentation/Header'
 import ColorPanel from './ColorPanel'
-const RootView = ({ label }: ThemeBuilderProps): React.ReactElement => {
-  const { mode, setMode } = useColorScheme()
+import type { ThemeBuilderProps } from '../pages'
+
+const RootView = ({ label, onClose, onExport }: ThemeBuilderProps): React.ReactElement => {
   return (
     <Paper elevation={3} className="max-h-full flex flex-col">
-      <Header headerTitle={label.title} onClose={() => console.log('Closing')} />
+      <Header headerTitle={label.title} onClose={onClose} />
       <DialogContent className="flex flex-col gap-2 md:flex-row overflow-auto" dividers>
         <Box flex={1} className="md:overflow-auto">
           <ColorPanel label={label} />
@@ -26,7 +18,7 @@ const RootView = ({ label }: ThemeBuilderProps): React.ReactElement => {
           {'222 222'.repeat(1000)}
         </Box>
       </DialogContent>
-      <Footer buttonLabel={label.export} onExport={() => console.log('Exporting')} />
+      <Footer buttonLabel={label.export} onExport={onExport} />
     </Paper>
   )
 }

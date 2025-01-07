@@ -1,4 +1,4 @@
-import { ThemeBuilderProps } from './ThemeBuilder.style'
+import type { ThemeBuilderProps } from './ThemeBuilder.style'
 import StoreProvider from '../../providers/StoreProvider'
 import MuiThemeProvider from '../../providers/MuiThemeProvider'
 import RootView from '../containers/RootView'

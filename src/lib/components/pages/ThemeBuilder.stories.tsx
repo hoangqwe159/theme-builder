@@ -63,7 +63,8 @@ Default.args = {
       primary: '#2962FF',
       secondary: '#245A9E',
       accent: '#48B6FF',
-      gradient: 'linear-gradient(180deg, #0d2ffc, #1749fd, #2162fd, #2a79fe, #348ffe, #3ea3ff, #48b6ff)',
+      gradient:
+        'linear-gradient(180deg, #0d2ffc 0%, #1749fd 20%, #2162fd 40%, #2a79fe 60%, #348ffe 80%, #3ea3ff 90%, #48b6ff 100%)',
       background: {
         default: '#f4f7ff',
         paper: '#FFFFFF',
@@ -92,7 +93,8 @@ Default.args = {
       primary: '#5C87FF',
       secondary: '#3584E6',
       accent: '#48B6FF',
-      gradient: 'linear-gradient(180deg, #0d2ffc, #1749fd, #2162fd, #2a79fe, #348ffe, #3ea3ff, #48b6ff)',
+      gradient:
+        'linear-gradient(180deg, #0d2ffc 0%, #1749fd 20%, #2162fd 40%, #2a79fe 60%, #348ffe 80%, #3ea3ff 90%, #48b6ff 100%)',
       background: {
         default: '#05070D',
         paper: '#05070D',

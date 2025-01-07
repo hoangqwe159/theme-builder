@@ -1,13 +1,14 @@
-import {
-  CloseOutlined,
-  DarkMode,
-  DarkModeOutlined,
-  Info,
-  InfoOutlined,
-  LightMode,
-  LightModeOutlined,
-} from '@mui/icons-material'
-import { DialogTitle, Icon, IconButton, Typography, useColorScheme, useMediaQuery, useTheme } from '@mui/material'
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
+import { useColorScheme, useTheme } from '@mui/material'
+import DialogTitle from '@mui/material/DialogTitle'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { useCallback } from 'react'
 import Logo from './Logo'
 
@@ -38,21 +39,21 @@ const Header = ({ headerTitle }: HeaderProps): React.ReactElement => {
         <IconButton onClick={onToggleMode}>
           {mode === 'system' ? (
             prefersDarkMode ? (
-              <LightModeOutlined />
+              <LightModeOutlinedIcon />
             ) : (
-              <DarkModeOutlined />
+              <DarkModeOutlinedIcon />
             )
           ) : mode === 'dark' ? (
-            <LightMode />
+            <LightModeIcon />
           ) : (
-            <DarkMode />
+            <DarkModeIcon />
           )}
         </IconButton>
         <IconButton>
-          <InfoOutlined />
+          <InfoOutlinedIcon />
         </IconButton>
         <IconButton>
-          <CloseOutlined />
+          <CloseOutlinedIcon />
         </IconButton>
       </div>
     </DialogTitle>

@@ -1,8 +1,9 @@
-import { PaletteOptions } from '@mui/material'
+import type { PaletteOptions } from '@mui/material'
 
 export interface ThemeBuilderProps {
   onClose: () => void
   onExport: () => void
+  renderPreview?: () => React.ReactElement
   label: ThemeBuilderLabel
   colorSchemes: {
     light: ColorVariants

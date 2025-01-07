@@ -1,4 +1,5 @@
-import { Button, DialogActions } from '@mui/material'
+import Button from '@mui/material/Button'
+import DialogActions from '@mui/material/DialogActions'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { useMemo } from 'react'
 

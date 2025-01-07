@@ -88,7 +88,7 @@ const MuiThemeProvider = ({ children }: PropsWithChildren) => {
                 const elevation = ownerState.elevation ?? 0
 
                 const overlay =
-                  elevation <= 0 ? 0 : elevation <= 1 ? 0.03 : elevation <= 2 ? 0.07 : elevation <= 3 ? 0.12 : 0.12
+                  elevation <= 0 ? 0 : elevation <= 1 ? 0.03 : elevation <= 2 ? 0.07 : elevation <= 3 ? 0.12 : 0.22
 
                 return {
                   ...(theme.palette.mode === 'dark' && {
@@ -108,7 +108,7 @@ const MuiThemeProvider = ({ children }: PropsWithChildren) => {
                 const elevation = ownerState.elevation ?? 0
 
                 const overlay =
-                  elevation <= 0 ? 0 : elevation <= 1 ? 0.03 : elevation <= 2 ? 0.07 : elevation <= 3 ? 0.12 : 0.12
+                  elevation <= 0 ? 0 : elevation <= 1 ? 0.03 : elevation <= 2 ? 0.07 : elevation <= 3 ? 0.12 : 0.22
 
                 return {
                   ...(theme.palette.mode === 'dark' && {
