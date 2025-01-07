@@ -5,20 +5,36 @@ import Footer from '../presentation/Footer'
 import Header from '../presentation/Header'
 import ColorPanel from './ColorPanel'
 import type { ThemeBuilderProps } from '../pages'
+import PreviewPanel from './PreviewPanel'
+import { useCallback } from 'react'
+import { getNextScheme, useStore } from '../../context/theme'
 
-const RootView = ({ label, onClose, onExport }: ThemeBuilderProps): React.ReactElement => {
+const RootView = ({ label, onClose, onExport, renderPreview }: ThemeBuilderProps): React.ReactElement => {
+  const { state, dispatch } = useStore()
+  const handleExport = useCallback(() => {
+    onExport(state)
+  }, [state])
+
+  const handleShuffle = useCallback(() => {
+    const newState = getNextScheme()
+    dispatch({ type: 'SET_COLOR_SCHEMES', colorSchemes: newState })
+  }, [])
+
   return (
     <Paper elevation={3} className="max-h-full flex flex-col">
       <Header headerTitle={label.title} onClose={onClose} />
-      <DialogContent className="flex flex-col gap-2 md:flex-row overflow-auto" dividers>
-        <Box flex={1} className="md:overflow-auto">
+      <DialogContent className="flex flex-col gap-8 md:gap-4 md:flex-row overflow-auto" dividers>
+        <Box className="md:overflow-auto md:flex-grow-1 md:flex-1">
           <ColorPanel label={label} />
         </Box>
-        <Box flex={2} className="md:overflow-auto">
-          {'222 222'.repeat(1000)}
-        </Box>
+        <Box className="md:overflow-auto md:flex-2">{renderPreview ? renderPreview() : <PreviewPanel />}</Box>
       </DialogContent>
-      <Footer buttonLabel={label.export} onExport={onExport} />
+      <Footer
+        shuffleLabel={label.shuffle}
+        exportLabel={label.export}
+        onExport={handleExport}
+        onShuffle={handleShuffle}
+      />
     </Paper>
   )
 }

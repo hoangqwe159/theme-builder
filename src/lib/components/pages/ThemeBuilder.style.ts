@@ -2,10 +2,10 @@ import type { PaletteOptions } from '@mui/material'
 
 export interface ThemeBuilderProps {
   onClose: () => void
-  onExport: () => void
+  onExport: (colorSchemes: { light: ColorVariants; dark: ColorVariants }) => void
   renderPreview?: () => React.ReactElement
   label: ThemeBuilderLabel
-  colorSchemes: {
+  colorSchemes?: {
     light: ColorVariants
     dark: ColorVariants
   }
@@ -15,6 +15,7 @@ export interface ThemeBuilderLabel {
   title: string
   close: string
   export: string
+  shuffle: string
   colorPanelDescription: string
   coreColors: string
   coreColorsDescription: string

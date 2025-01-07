@@ -17,12 +17,10 @@ interface HeaderProps {
   onClose: () => void
 }
 
-const Header = ({ headerTitle }: HeaderProps): React.ReactElement => {
+const Header = ({ headerTitle, onClose }: HeaderProps): React.ReactElement => {
   const { mode, setMode } = useColorScheme()
   const theme = useTheme()
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  console.log(prefersDarkMode)
-
   const onToggleMode = useCallback(() => {
     setMode(mode === 'system' ? (prefersDarkMode ? 'light' : 'dark') : mode === 'dark' ? 'light' : 'dark')
   }, [mode, setMode])
@@ -30,8 +28,8 @@ const Header = ({ headerTitle }: HeaderProps): React.ReactElement => {
   return (
     <DialogTitle className="flex flex-row justify-between items-center">
       <div className="items-center flex flex-row gap-4">
-        <Logo fill={theme.palette.primary.main} />
-        <Typography color="primary" variant="h6">
+        <Logo fill={theme.palette.secondary.main} />
+        <Typography color="secondary" variant="h6">
           {headerTitle}
         </Typography>
       </div>
@@ -52,7 +50,7 @@ const Header = ({ headerTitle }: HeaderProps): React.ReactElement => {
         <IconButton>
           <InfoOutlinedIcon />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={onClose}>
           <CloseOutlinedIcon />
         </IconButton>
       </div>

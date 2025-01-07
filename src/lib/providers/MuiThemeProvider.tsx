@@ -157,6 +157,9 @@ const MuiThemeProvider = ({ children }: PropsWithChildren) => {
               ...(lightVariants.gradient ? { gradient: lightVariants.gradient } : {}),
               ...(lightVariants.background ? { background: lightVariants.background } : {}),
               ...(lightVariants.text ? { text: lightVariants.text } : {}),
+              paper: {
+                main: '#fff',
+              },
             },
           },
           dark: {
@@ -172,14 +175,15 @@ const MuiThemeProvider = ({ children }: PropsWithChildren) => {
               ...(darkVariants.gradient ? { gradient: darkVariants.gradient } : {}),
               ...(darkVariants.background ? { background: darkVariants.background } : {}),
               ...(darkVariants.text ? { text: darkVariants.text } : {}),
+              paper: {
+                main: '#fff',
+              },
             },
           },
         },
       }),
     )
   }, [state])
-
-  console.log(theme)
 
   return (
     <StyledEngineProvider>
@@ -202,4 +206,28 @@ declare module '@mui/material/styles' {
   }
   interface Palette extends CustomPalette {}
   interface PaletteOptions extends CustomPalette {}
+}
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    default: true
+    paper: true
+    accent: true
+  }
+}
+
+declare module '@mui/material/IconButton' {
+  interface IconButtonPropsColorOverrides {
+    default: true
+    paper: true
+    accent: true
+  }
+}
+
+declare module '@mui/material/SvgIcon' {
+  interface SvgIconPropsColorOverrides {
+    default: true
+    paper: true
+    accent: true
+  }
 }

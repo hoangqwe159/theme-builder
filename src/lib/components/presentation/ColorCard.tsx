@@ -22,10 +22,10 @@ const ColorCard = ({ title, subtitle, ...colorPickerProps }: ColorCardProps & Co
         elevation={4}
         variant="outlined"
         sx={{ border: 0, borderRadius: '24px', backgroundColor: 'background.default' }}
-        className="w-full p-1.5 flex items-center"
+        className="w-full p-1.5 flex flex-row items-center gap-4"
       >
         <ButtonBase
-          className="w-[48px] h-[48px]"
+          className="w-[48px] h-[48px] flex-shrink-0"
           sx={{
             background: colorPickerProps.value,
             borderRadius: '50%',
@@ -34,11 +34,21 @@ const ColorCard = ({ title, subtitle, ...colorPickerProps }: ColorCardProps & Co
             borderStyle: 'solid',
           }}
           onClick={onOpen}
-        ></ButtonBase>
-        <div className="ml-4">
+        />
+        <div className="flex-grow-1">
           <Typography variant="body2">{title}</Typography>
-          <Typography color="text.secondary" variant="caption">
-            {subtitle}
+          <Typography
+            color="text.secondary"
+            variant="caption"
+            sx={{
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitLineClamp: '1',
+              WebkitBoxOrient: 'vertical',
+            }}
+          >
+            {colorPickerProps.value}
           </Typography>
         </div>
       </Card>
