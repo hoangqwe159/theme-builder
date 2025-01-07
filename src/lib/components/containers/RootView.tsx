@@ -8,11 +8,17 @@ import type { ThemeBuilderProps } from '../pages'
 import PreviewPanel from './PreviewPanel'
 import { useCallback } from 'react'
 import { getNextScheme, useStore } from '../../context/theme'
+import { DEFAULT_LOCALE } from '../../utils/locale'
 
-const RootView = ({ label, onClose, onExport, renderPreview }: ThemeBuilderProps): React.ReactElement => {
+const RootView = ({
+  label = DEFAULT_LOCALE,
+  onClose,
+  onExport,
+  renderPreview,
+}: ThemeBuilderProps): React.ReactElement => {
   const { state, dispatch } = useStore()
   const handleExport = useCallback(() => {
-    onExport(state)
+    onExport?.(state)
   }, [state])
 
   const handleShuffle = useCallback(() => {

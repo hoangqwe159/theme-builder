@@ -1,10 +1,10 @@
-import { PropsWithChildren, useMemo } from 'react'
+import { type PropsWithChildren, useMemo } from 'react'
 import { useStore } from '../context/theme'
 import {
   createTheme,
   CssBaseline,
   darkScrollbar,
-  PaletteColorOptions,
+  type PaletteColorOptions,
   responsiveFontSizes,
   StyledEngineProvider,
   Theme,

@@ -1,9 +1,8 @@
 import Button from '@mui/material/Button'
 import DialogActions from '@mui/material/DialogActions'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import ShuffleIcon from '@mui/icons-material/Shuffle'
 import { useMemo } from 'react'
-import { Shuffle } from '@mui/icons-material'
-
 interface FooterProps {
   onExport: () => void
   onShuffle: () => void
@@ -13,11 +12,11 @@ interface FooterProps {
 
 const Footer = ({ exportLabel, onExport, shuffleLabel, onShuffle }: FooterProps): React.ReactElement => {
   const EndIcon = useMemo(() => <ArrowForwardIcon />, [])
-  const ShuffleIcon = useMemo(() => <Shuffle />, [])
+  const Shuffle = useMemo(() => <ShuffleIcon />, [])
 
   return (
     <DialogActions>
-      <Button className="w-36" endIcon={ShuffleIcon} variant="outlined" color="secondary" onClick={onShuffle}>
+      <Button className="w-36" endIcon={Shuffle} variant="outlined" color="secondary" onClick={onShuffle}>
         {shuffleLabel}
       </Button>
       <Button className="w-36" endIcon={EndIcon} variant="contained" color="primary" onClick={onExport}>

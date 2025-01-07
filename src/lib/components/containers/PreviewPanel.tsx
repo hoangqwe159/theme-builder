@@ -8,7 +8,7 @@ import Paper from '@mui/material/Paper'
 import Alert from '@mui/material/Alert'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { ThemeBuilderProps } from '../pages'
+import type { ThemeBuilderProps } from '../pages'
 import { grey } from '@mui/material/colors'
 import AppsIcon from '@mui/icons-material/Apps'
 import BookmarkIcon from '@mui/icons-material/Bookmark'
@@ -23,7 +23,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'
 import Logo from '../presentation/Logo'
 import { useMemo } from 'react'
-import ModuleCard, { ModuleCardProps } from '../presentation/ModuleCard'
+import ModuleCard, { type ModuleCardProps } from '../presentation/ModuleCard'
 
 interface PreviewPanelProps {
   renderPreview?: ThemeBuilderProps['renderPreview']

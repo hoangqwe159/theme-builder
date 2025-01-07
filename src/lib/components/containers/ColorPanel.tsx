@@ -5,12 +5,13 @@ import type { ThemeBuilderProps } from '../pages'
 import ColorCard from '../presentation/ColorCard'
 import { useMemo } from 'react'
 import useColor from '../../hooks/useColor'
+import { DEFAULT_LOCALE } from '../../utils/locale'
 
 interface ColorPanelProps {
   label: ThemeBuilderProps['label']
 }
 
-export default function ColorPanel({ label }: ColorPanelProps): React.ReactElement {
+export default function ColorPanel({ label = DEFAULT_LOCALE }: ColorPanelProps): React.ReactElement {
   const theme = useTheme()
   const {
     primary,

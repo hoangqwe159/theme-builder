@@ -14,7 +14,7 @@ import Logo from './Logo'
 
 interface HeaderProps {
   headerTitle: string
-  onClose: () => void
+  onClose?: () => void
 }
 
 const Header = ({ headerTitle, onClose }: HeaderProps): React.ReactElement => {
