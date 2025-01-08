@@ -1,11 +1,6 @@
-import { createContext, ReactNode, useContext, useReducer } from 'react'
-import { ColorVariants, ThemeBuilderProps } from '../components'
+import { createContext, useContext } from 'react'
+import type { ColorVariants, ThemeState } from '../components'
 import { SimplePaletteColorOptions } from '@mui/material'
-
-export interface ThemeState {
-  light: ColorVariants
-  dark: ColorVariants
-}
 
 type Action =
   | { type: 'SET_LIGHT_PRIMARY'; color: string }

@@ -1,5 +1,6 @@
 import { type ReactNode, useMemo, useReducer } from 'react'
-import { ThemeContext, themeReducer, ThemeState, useSelector } from '../context/theme'
+import { ThemeContext, themeReducer, useSelector } from '../context/theme'
+import type { ThemeState } from '../components'
 
 const StoreProvider = ({ children, initialState }: { children: ReactNode; initialState: ThemeState }) => {
   const [state, dispatch] = useReducer(themeReducer, initialState)

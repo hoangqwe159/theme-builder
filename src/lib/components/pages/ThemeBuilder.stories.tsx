@@ -35,6 +35,7 @@ Default.args = {
     close: 'Close',
     export: 'Export theme',
     shuffle: 'Shuffle colors',
+    import: 'Import theme',
     colorPanelDescription:
       'Build a Material color scheme to map dynamic color, use as fallback colors, or implement a branded theme.',
     coreColors: 'Core colors',

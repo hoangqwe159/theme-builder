@@ -31,33 +31,6 @@ import {
 } from '../context/theme'
 import { useCallback, useMemo } from 'react'
 
-// const selectLightPrimary = (state: ThemeState) => state.light.primary
-// const selectLightSecondary = (state: ThemeState) => state.light.secondary
-// const selectLightAccent = (state: ThemeState) => state.light.accent
-// const selectLightGradient = (state: ThemeState) => state.light.gradient
-// const selectLightBackgroundDefault = (state: ThemeState) => state.light.background.default
-// const selectLightBackgroundPaper = (state: ThemeState) => state.light.background.paper
-// const selectLightTextPrimary = (state: ThemeState) => state.light.text.primary
-// const selectLightTextSecondary = (state: ThemeState) => state.light.text.secondary
-// const selectLightTextDisabled = (state: ThemeState) => state.light.text.disabled
-// const selectLightInfo = (state: ThemeState) => (state.light.palette?.info as SimplePaletteColorOptions)?.main
-// const selectLightSuccess = (state: ThemeState) => (state.light.palette?.success as SimplePaletteColorOptions)?.main
-// const selectLightWarning = (state: ThemeState) => (state.light.palette?.warning as SimplePaletteColorOptions)?.main
-// const selectLightError = (state: ThemeState) => (state.light.palette?.error as SimplePaletteColorOptions)?.main
-// const selectDarkPrimary = (state: ThemeState) => state.dark.primary
-// const selectDarkSecondary = (state: ThemeState) => state.dark.secondary
-// const selectDarkAccent = (state: ThemeState) => state.dark.accent
-// const selectDarkGradient = (state: ThemeState) => state.dark.gradient
-// const selectDarkBackgroundDefault = (state: ThemeState) => state.dark.background.default
-// const selectDarkBackgroundPaper = (state: ThemeState) => state.dark.background.paper
-// const selectDarkTextPrimary = (state: ThemeState) => state.dark.text.primary
-// const selectDarkTextSecondary = (state: ThemeState) => state.dark.text.secondary
-// const selectDarkTextDisabled = (state: ThemeState) => state.dark.text.disabled
-// const selectDarkInfo = (state: ThemeState) => (state.dark.palette?.info as SimplePaletteColorOptions)?.main
-// const selectDarkSuccess = (state: ThemeState) => (state.dark.palette?.success as SimplePaletteColorOptions)?.main
-// const selectDarkWarning = (state: ThemeState) => (state.dark.palette?.warning as SimplePaletteColorOptions)?.main
-// const selectDarkError = (state: ThemeState) => (state.dark.palette?.error as SimplePaletteColorOptions)?.main
-
 const useColor = () => {
   const theme = useTheme()
   const { dispatch } = useStore()

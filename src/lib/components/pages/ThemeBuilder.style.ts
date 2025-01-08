@@ -1,4 +1,4 @@
-import type { PaletteOptions } from '@mui/material'
+import { z } from 'zod'
 
 export interface ThemeBuilderProps {
   onClose?: () => void
@@ -16,6 +16,7 @@ export interface ThemeBuilderLabel {
   close: string
   export: string
   shuffle: string
+  import: string
   colorPanelDescription: string
   coreColors: string
   coreColorsDescription: string
@@ -39,19 +40,40 @@ export interface ThemeBuilderLabel {
   disabled: string
 }
 
-export interface ColorVariants {
-  primary: string
-  secondary: string
-  accent: string
-  gradient: string
-  background: {
-    default: string
-    paper: string
-  }
-  text: {
-    primary: string
-    secondary: string
-    disabled: string
-  }
-  palette: PaletteOptions
-}
+const ColorVariantsSchema = z.object({
+  primary: z.string(),
+  secondary: z.string(),
+  accent: z.string(),
+  gradient: z.string(),
+  background: z.object({
+    default: z.string(),
+    paper: z.string(),
+  }),
+  text: z.object({
+    primary: z.string(),
+    secondary: z.string(),
+    disabled: z.string(),
+  }),
+  palette: z.object({
+    error: z.object({
+      main: z.string(),
+    }),
+    warning: z.object({
+      main: z.string(),
+    }),
+    info: z.object({
+      main: z.string(),
+    }),
+    success: z.object({
+      main: z.string(),
+    }),
+  }),
+})
+
+export const ThemeStateSchema = z.object({
+  light: ColorVariantsSchema,
+  dark: ColorVariantsSchema,
+})
+
+export type ColorVariants = z.infer<typeof ColorVariantsSchema>
+export type ThemeState = z.infer<typeof ThemeStateSchema>

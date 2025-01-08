@@ -1,23 +1,23 @@
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
-import { useColorScheme, useTheme } from '@mui/material'
+import { useTheme, useColorScheme } from '@mui/material'
 import DialogTitle from '@mui/material/DialogTitle'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useCallback } from 'react'
 import Logo from './Logo'
-
+import DownloadIcon from '@mui/icons-material/Download'
 interface HeaderProps {
   headerTitle: string
   onClose?: () => void
+  onDownload?: () => void
 }
 
-const Header = ({ headerTitle, onClose }: HeaderProps): React.ReactElement => {
+const Header = ({ headerTitle, onClose, onDownload }: HeaderProps): React.ReactElement => {
   const { mode, setMode } = useColorScheme()
   const theme = useTheme()
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -47,8 +47,8 @@ const Header = ({ headerTitle, onClose }: HeaderProps): React.ReactElement => {
             <DarkModeIcon />
           )}
         </IconButton>
-        <IconButton>
-          <InfoOutlinedIcon />
+        <IconButton onClick={onDownload}>
+          <DownloadIcon />
         </IconButton>
         <IconButton onClick={onClose}>
           <CloseOutlinedIcon />
